@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vaccine Epidemiology</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This books includes some reading notes from the published books or papers, analysis method with some real datasets and short insight on the vaccine epidemiology">
+  <meta name="generator" content="bookdown 0.0.71 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Vaccine Epidemiology" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This books includes some reading notes from the published books or papers, analysis method with some real datasets and short insight on the vaccine epidemiology" />
+  <meta name="github-repo" content="spatial-r/Vaccineepidemiology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vaccine Epidemiology" />
+  
+  <meta name="twitter:description" content="This books includes some reading notes from the published books or papers, analysis method with some real datasets and short insight on the vaccine epidemiology" />
+  
+
+<meta name="author" content="Bing Zhang">
+
+<meta name="date" content="2016-05-22">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="reproduction-numbers-during-epidemics.html">
+<link rel="next" href="vaccine-epidemiology-a-short-insight.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Vaccine Epidemiology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html"><i class="fa fa-check"></i><b>2</b> Bayesian Infectious Dynamics Model in Discrete Time</a><ul>
+<li class="chapter" data-level="2.1" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#model-and-parameters"><i class="fa fa-check"></i><b>2.2</b> Model and Parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html"><i class="fa fa-check"></i><b>3</b> Reproduction numbers during epidemics</a><ul>
+<li class="chapter" data-level="3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#basic-reproduction-number"><i class="fa fa-check"></i><b>3.1</b> Basic reproduction number</a></li>
+<li class="chapter" data-level="3.2" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#package-r0"><i class="fa fa-check"></i><b>3.2</b> Package R0</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#example-and-code"><i class="fa fa-check"></i><b>3.2.1</b> Example and code</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#package-epiestim"><i class="fa fa-check"></i><b>3.3</b> Package EpiEstim</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#example-and-code-1"><i class="fa fa-check"></i><b>3.3.1</b> Example and code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html"><i class="fa fa-check"></i><b>4</b> Spatial-temporal Multicomponent Model</a><ul>
+<li class="chapter" data-level="4.1" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.1"><i class="fa fa-check"></i><b>4.1</b> 模型综述</a></li>
+<li class="chapter" data-level="4.2" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.2"><i class="fa fa-check"></i><b>4.2</b> 模型优点</a></li>
+<li class="chapter" data-level="4.3" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3"><i class="fa fa-check"></i><b>4.3</b> 具体实例</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#sts"><i class="fa fa-check"></i><b>4.3.1</b> STS数据</a></li>
+<li class="chapter" data-level="4.3.2" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3.2"><i class="fa fa-check"></i><b>4.3.2</b> 数据可视化</a></li>
+<li class="chapter" data-level="4.3.3" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3.3"><i class="fa fa-check"></i><b>4.3.3</b> 模型拟合</a></li>
+<li class="chapter" data-level="4.3.4" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3.4"><i class="fa fa-check"></i><b>4.3.4</b> 纳入协变量</a></li>
+<li class="chapter" data-level="4.3.5" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#power-law"><i class="fa fa-check"></i><b>4.3.5</b> Power-law</a></li>
+<li class="chapter" data-level="4.3.6" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#random-effect"><i class="fa fa-check"></i><b>4.3.6</b> Random effect</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.4"><i class="fa fa-check"></i><b>4.4</b> 结语</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html"><i class="fa fa-check"></i><b>5</b> Vaccine Epidemiology: A short insight</a><ul>
+<li class="chapter" data-level="5.1" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#background"><i class="fa fa-check"></i><b>5.1</b> Background</a></li>
+<li class="chapter" data-level="5.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-epdemiology"><i class="fa fa-check"></i><b>5.3</b> Vaccine Epdemiology</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-related-items"><i class="fa fa-check"></i><b>5.3.1</b> Vaccine-related Items</a></li>
+<li class="chapter" data-level="5.3.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-strategies"><i class="fa fa-check"></i><b>5.3.2</b> Vaccine Strategies</a></li>
+<li class="chapter" data-level="5.3.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#measure-indicators"><i class="fa fa-check"></i><b>5.3.3</b> Measure Indicators</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html"><i class="fa fa-check"></i><b>6</b> Incomplete vaccination with an imperfect vaccine</a><ul>
+<li class="chapter" data-level="6.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
+<li class="chapter" data-level="6.2" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#introduction-2"><i class="fa fa-check"></i><b>6.2</b> Introduction</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#immunity-against-infection"><i class="fa fa-check"></i><b>6.2.1</b> Immunity against infection</a></li>
+<li class="chapter" data-level="6.2.2" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#immunity-against-tramsimission-and-disease"><i class="fa fa-check"></i><b>6.2.2</b> Immunity against tramsimission and disease</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#method"><i class="fa fa-check"></i><b>6.3</b> Method</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#data"><i class="fa fa-check"></i><b>6.3.1</b> Data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#model"><i class="fa fa-check"></i><b>6.3.2</b> Model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#results"><i class="fa fa-check"></i><b>6.4</b> Results</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vaccine Epidemiology</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="spatial-temporal-multicomponent-model" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Spatial-temporal Multicomponent Model</h1>
+<p>Welocome to the surveillance project again! 这是一篇针对<a href="http://surveillance.r-forge.r-project.org/">Surveillance</a>程序包中<strong>时空多成分模型</strong>( <strong>Spatial-temporal Multicomponent Model</strong>)的文章。时空多成分模型是surveillance程序包提供的四大分析模块之一(<strong>Outbreaks detection</strong>, <strong>Endemic-epidemic Spatio-temporal Point Process Intensity Model</strong>, <strong>SIR event history of a fixed population</strong> 和 <strong>Spatial-temporal Multicomponent Model</strong>)，自去年10月份开始接触，期间走了很多弯路(学习过程)，故将相关教训在此文中分享，希望对时空流行病学感兴趣的朋友能够尽快熟悉该模型并能应用于自己的数据。英文功底不错的建议阅读该程序包的英文说明<a href="http://arxiv.org/pdf/1411.0416.pdf">文档</a>。如果您发现此文中的错误，也恳请留言指出，在此特表感谢。</p>
+<div id="section-4.1" class="section level2">
+<h2><span class="header-section-number">4.1</span> 模型综述</h2>
+<p>时空多成分模型(Spatial-temporal Multicomponent Model)的简约版最初由<a href="http://www.researchgate.net/profile/Michael_Hoehle/publication/45138457_A_statistical_framework_for_the_analysis_of_multivariate_infectious_disease_surveillance_data/links/0c960520b310bb8378000000.pdf">Held et al. (2005)</a>提出，并应用于麻疹疫情中[PS: 基于浙江省麻疹疫情已写了篇类似的文章，已投中华流行病学杂志]。<a href="http://biostatistics.oxfordjournals.org/content/7/3/422.full">Leonhard Held et al.(2006)</a>在“A two-componet model for counts of infectious disease”一文中构建了随机双成分(<strong>相互独立</strong>)模型，包括<strong>局部特性成分</strong>(Endemic Component)和<strong>时间流行成分</strong>(Epidemic Component)，其中局部特性成分控制季节效应的影响，时间流行成分同时考虑了疾病疫情的时间相关性和暴发影响。该模型假设时序数据服从Generalised Branching Process with Immigration， 分别对甲肝和乙肝进行了拟合。在surveillance程序包中，基础模型中将时序数据分为三个成分：局部特性成分(Endemic component, end)、时间自相关成分(Autoregressive component，ar)和空间流行成分(Epidemic component, ne)，并在公式中分别用<span class="math inline">\(ν_(i,t)\)</span>、<span class="math inline">\(λ_(i,t)\)</span>和<span class="math inline">\(ϕ_(i,t)\)</span>表示。其中局部特性成分反映疫情的本地风险情况，时间自相关成分反映的是过去时段疫情在时间维度上产生的影响，而空间流行成分反映的是邻近单元对目标单元产生的影响(可根据多种空间权重矩阵来定义<strong>邻近</strong>)。具体的公式如下：</p>
+<p><span class="math inline">\(γ_0\)</span>、<span class="math inline">\(α_0\)</span> 和 <span class="math inline">\(β_0\)</span>分别代表了三成分的截距，<span class="math inline">\(γ_i\)</span>、<span class="math inline">\(α_i\)</span> 和 <span class="math inline">\(β_i\)</span> 分别代表三成分的随机效应，都服从均值为0的正态分布；γ、α 和 β分别代表了协变量 <span class="math inline">\(z_(i,t)^T\)</span>、<span class="math inline">\(μ_(i,t)^T\)</span> 和 <span class="math inline">\(x_(i,t)^T\)</span> 对局部特性成分、时间自相关成分和空间流行成分的作用强度。其中协变量<span class="math inline">\(z_(i,t)^T\)</span>在本研究中包含了季节效应<span class="math inline">\({∑_(s=1)^S[κ_s sina(τ_s t)+δ_s cosa(τ_s t)]}\)</span>，其中S代表周期数，<span class="math inline">\(τ_s=2πs/freq\)</span>。</p>
+</div>
+<div id="section-4.2" class="section level2">
+<h2><span class="header-section-number">4.2</span> 模型优点</h2>
+<p>surveillance程序包中的时空多成分模型相关优点主要体现在如下几个方面：</p>
+<ol style="list-style-type: decimal">
+<li><strong>空间权重</strong>：多种方式定义研究单元的邻近性<br />
+</li>
+<li><strong>协变量纳入</strong>：自变量反映局部和时序关系<br />
+</li>
+<li><strong>随机效应</strong>：考虑区域的空间异质性</li>
+</ol>
+<p>空间权重对空间分析影响较大，其设置方式是空间分析中老生常谈的话题。surveillance程序包除提高基本的空间权重矩阵外(如一阶queen邻近等，具体见<a href="https://cran.r-project.org/web/packages/spdep/index.html">spdep</a>程序包)，还提供<a href="http://www.medscape.com/medline/abstract/24843881"><strong>Power-law</strong></a>算法，能更好模拟传染病远距离传播的特性(在一定距离范围内快速递减)。</p>
+<p>协变量纳入不仅可在控制其他效应后准确度量协变量和结局变量之间的关系，也能较高地提高模型拟合度(AIC)。协变量一般纳入局部特性成分或时间自相关成分，借以反映其在局部疫情风险和时序效果上的影响，当然，将协变量得系数恒设为1进而转变成offset。不管何种方式，都可以借助AIC值来选择最优拟合模型，尽管有研究表明将易感人群比例值纳入时间自相关成分效果较佳(见<a href="http://journals.cambridge.org/article_S0950268810001664">此文</a>)。</p>
+<p>在协变量不能完全反映研究单元的空间异质性时，随机效应能显著提高模型的预测精度。时空多成分模型中纳入随机效应最初由<a href="http://onlinelibrary.wiley.com/doi/10.1002/sim.4177/abstract">M. Paul and Held L(2010)</a>提出，这极大提高了时空多成分模型的适用度。对于来自大疫情的传染病监测数据，无法观测的空间异质性主要体现在underreporting。而针对不同研究单元不同成分随机效应的可视化，可为卫生决策者提供较好的干预方向，若某区域麻疹的局部特性成分较大，则说明麻疹疫情的本地风险较大，进一步巩固本地免疫屏障则显得尤为重要。</p>
+</div>
+<div id="section-4.3" class="section level2">
+<h2><span class="header-section-number">4.3</span> 具体实例</h2>
+<div id="sts" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> STS数据</h3>
+<p>surveillance程序包中提供<strong>hhh4</strong>函数来拟合时空多成分模型，其所需的数据格式为sts(surveillance time series)。sts数据需包括以下几个部分：<strong>疫情数据</strong>，<strong>人口数据</strong>，<strong>空间邻阶数据</strong>,<strong>地图数据</strong>或和<strong>协变量数据</strong>。可借助<strong>new</strong>函数生成sts数据，示例代码如下：</p>
+<pre><code>measlesWeserEms &lt;- new(&quot;sts&quot;, start = c(2013, 1), freq =365, epoch = 1:nrow(dat.final),
+                observed = dat.final, neighbourhood = weserems_nbOrder,
+               map = dat.zj, populationFrac = populationFrac)</code></pre>
+<p>此处，我的数据是逐日数据，因而freq设置为365，dat,final是疫情数据，dat.zj是地图数据，populationFrac是人口比例数据(研究单元人口占总研究单元人口数的百分比)。此处一定需注意各个数据集之间匹配问题，也就是变量名一定要一致(重要的事情不说三遍!!!)。对于空间邻阶文件，可通过spdep程序包中的<strong>poly2adjmat</strong>和<strong>nbOrder</strong>函数来生成，但需注意孤立区域，如浙江省的洞头县尽管从地图属性是孤立的，但考虑传染病的扩散特性，还是将其设置为与乐清市相邻。</p>
+</div>
+<div id="section-4.3.2" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> 数据可视化</h3>
+<p>对于sts数据，surveillance程序包提供了一系列简约的方式来进行数据可视化(时间和空间)。考虑到数据保密性，此处，仅利用程序包自带的measlesWeserEms数据集来实现数据可视化和模型拟合。时间序列可视化的部分代码如下：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(surveillance)
+<span class="kw">data</span>(measlesWeserEms)
+measlesWeserEms15 &lt;-<span class="st"> </span>measlesWeserEms[, <span class="kw">colSums</span>(<span class="kw">observed</span>(measlesWeserEms)) &gt;<span class="st"> </span><span class="dv">6</span>]
+<span class="kw">plot</span>(measlesWeserEms15, <span class="dt">type =</span>observed ~<span class="st"> </span>time |<span class="st"> </span>unit, <span class="dt">legend.opts =</span> <span class="ot">NULL</span>)</code></pre></div>
+<p><img src="Book_files/figure-html/vsiaulization-1.png" width="528" style="display: block; margin: auto;" /> 你可以调节type参数的值，如“observed ~ time”或“observed ~ unit”等来达到不同的可视化效果，需要注意的是其采用的是spplot和lattice绘图系统，若想调节图形相关参数的可查阅程序包的帮助文档。当然，也可以用ggplot2和gridExtra程序包，分别实现数据可视化和图形组合(推荐之至)。</p>
+</div>
+<div id="section-4.3.3" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> 模型拟合</h3>
+<p>此处先拟合基础模型，其包括三成分，其中各研究单元的人口比例值作为offset结合地域面积来反映人口密度，局部特性成分控制季节效应，时间流行成分和空间流行成分(一阶邻近)都只包括截距项。为控制研究区域疫情的过度离散特性，采用负二项分布(NegBin1)进行拟合，当然也可以选择p泊松分布(Possion)。相关代码如下：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measlesModel_basic &lt;-<span class="st"> </span><span class="kw">list</span>( 
+<span class="dt">end =</span> <span class="kw">list</span>(<span class="dt">f =</span> <span class="kw">addSeason2formula</span>(~<span class="dv">1</span> +<span class="st"> </span>t, <span class="dt">period =</span> measlesWeserEms@freq),<span class="dt">offset =</span> <span class="kw">population</span>(measlesWeserEms)), 
+<span class="dt">ar =</span> <span class="kw">list</span>(<span class="dt">f =</span> ~<span class="dv">1</span>),<span class="dt">ne =</span> <span class="kw">list</span>(<span class="dt">f =</span> ~<span class="dv">1</span>, <span class="dt">weights =</span> <span class="kw">neighbourhood</span>(measlesWeserEms) ==<span class="st"> </span><span class="dv">1</span>), <span class="dt">family =</span> <span class="st">&quot;NegBin1&quot;</span>)
+measlesFit_basic &lt;-<span class="st"> </span><span class="kw">hhh4</span>(<span class="dt">stsObj =</span> measlesWeserEms, <span class="dt">control =</span> measlesModel_basic)
+<span class="kw">summary</span>(measlesFit_basic, <span class="dt">idx2Exp =</span> <span class="dv">1</span>:<span class="dv">4</span>, <span class="dt">amplitudeShift =</span> <span class="ot">TRUE</span>, <span class="dt">maxEV =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Call: 
+## hhh4(stsObj = measlesWeserEms, control = measlesModel_basic)
+## 
+## Coefficients:
+##                       Estimate   Std. Error
+## exp(ar.1)              0.645403   0.079270 
+## exp(ne.1)              0.015805   0.004200 
+## exp(end.1)             1.080248   0.278839 
+## exp(end.t)             1.001185   0.004264 
+## end.A(2 * pi * t/52)   1.164231   0.192124 
+## end.s(2 * pi * t/52)  -0.634360   0.133500 
+## overdisp               2.013839   0.285441 
+## 
+## Epidemic dominant eigenvalue:  0.72 
+## 
+## Log-likelihood:   -971.72 
+## AIC:              1957.44 
+## BIC:              1995.72 
+## 
+## Number of units:        17 
+## Number of time points:  103</code></pre>
+<p>summary函数中idx2Exp是一个简单系数转换参数，此处是将系数中的ar.1，ne.1，end.1和end.t转换成其对数值，至于为什么要转换，看看基础模型的公式即可知。Epidemic dominant eigenvalue表示疾病发病率中空间流行成分百分值，更进一步的可视化形式如下:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">districts2plot &lt;-<span class="st"> </span><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">colSums</span>(<span class="kw">observed</span>(measlesWeserEms)) &gt;<span class="st"> </span><span class="dv">20</span>))
+<span class="kw">plot</span>(measlesFit_basic, <span class="dt">type =</span> <span class="st">&quot;fitted&quot;</span>, <span class="dt">units =</span> districts2plot, <span class="dt">hide0s =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p><img src="Book_files/figure-html/vsisp-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>对于上图的解读可以从如下方面进行：三种颜色条纹分别代表局部特性成分、时间自相关成分和空间流行成分(需注意的是，此图中作者将Epidemic理解成spatiotemporal，似乎也是有一定道理)。总体而言，这六个研究单元的麻疹疫情主要是受先前麻疹疫情的影响，麻疹疫情出现后，没及时发现并及时进行相应处理。区域单元03453在2002年上半年疫情受邻近区域的影响较大。</p>
+</div>
+<div id="section-4.3.4" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> 纳入协变量</h3>
+<p>对于疫苗针对传染病而言，相关疫苗覆盖率对传染病疫情的传播具有重要影响。因此，此处易感人群比例作为协变量纳入基础模型，至于纳入何种成分中，且看AIC值。相关代码如下：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Sprop &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span> -<span class="st"> </span>measlesWeserEms@map@data$vacc1<span class="fl">.2004</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>,
+<span class="dt">nrow =</span> <span class="kw">nrow</span>(measlesWeserEms), <span class="dt">ncol =</span> <span class="kw">ncol</span>(measlesWeserEms))
+Soptions &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;unchanged&quot;</span>, <span class="st">&quot;Soffset&quot;</span>, <span class="st">&quot;Scovar&quot;</span>)
+SmodelGrid &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(<span class="dt">end =</span> Soptions, <span class="dt">ar =</span> Soptions)
+<span class="kw">row.names</span>(SmodelGrid) &lt;-<span class="st"> </span><span class="kw">do.call</span>(<span class="st">&quot;paste&quot;</span>, <span class="kw">c</span>(SmodelGrid, <span class="kw">list</span>(<span class="dt">sep =</span> <span class="st">&quot;|&quot;</span>)))
+measlesFits_vacc &lt;-<span class="st"> </span><span class="kw">apply</span>(<span class="dt">X =</span> SmodelGrid, <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> function (options) {
+ updatecomp &lt;-<span class="st"> </span>function (comp, option)
+ switch(option, <span class="st">&quot;unchanged&quot;</span> =<span class="st"> </span><span class="kw">list</span>(),
+ <span class="st">&quot;Soffset&quot;</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">offset =</span> comp$offset *<span class="st"> </span>Sprop),
+ <span class="st">&quot;Scovar&quot;</span> =<span class="st"> </span><span class="kw">list</span>(<span class="dt">f =</span> <span class="kw">update</span>(comp$f, ~. +<span class="st"> </span><span class="kw">log</span>(Sprop))))
+ <span class="kw">update</span>(measlesFit_basic,
+ <span class="dt">end =</span> <span class="kw">updatecomp</span>(measlesFit_basic$control$end, options[<span class="dv">1</span>]),
+ <span class="dt">ar =</span> <span class="kw">updatecomp</span>(measlesFit_basic$control$ar, options[<span class="dv">2</span>]),
+ <span class="dt">data =</span> <span class="kw">list</span>(<span class="dt">Sprop =</span> Sprop))
+ })
+
+AIC.list &lt;-<span class="st"> </span>function (object, ..., <span class="dt">k =</span> <span class="dv">2</span>){
+if (<span class="kw">is.null</span>(<span class="kw">names</span>(object))) <span class="kw">stop</span>(<span class="st">&quot;the list of models must have names&quot;</span>)
+ <span class="kw">eval</span>(<span class="kw">as.call</span>(<span class="kw">c</span>(<span class="kw">lapply</span>(<span class="kw">c</span>(<span class="st">&quot;AIC&quot;</span>, <span class="kw">names</span>(object)), as.name), <span class="kw">list</span>(<span class="dt">k =</span> k))),
+ <span class="dt">envir =</span> object)
+ }
+aics_vacc &lt;-<span class="st"> </span><span class="kw">AIC</span>(measlesFits_vacc);aics_vacc[<span class="kw">order</span>(aics_vacc[, <span class="st">&quot;AIC&quot;</span>]), ]</code></pre></div>
+<pre><code>##                     df      AIC
+## `Scovar|unchanged`   8 1917.071
+## `Scovar|Scovar`      9 1919.070
+## `Soffset|unchanged`  7 1922.114
+## `Soffset|Scovar`     8 1924.020
+## `Scovar|Soffset`     8 1934.478
+## `Soffset|Soffset`    7 1936.990
+## unchanged|unchanged  7 1957.442
+## `unchanged|Scovar`   8 1958.959
+## `unchanged|Soffset`  7 1966.933</code></pre>
+<p>由AIC值可知，当易感人群比例这个变量纳入局部特性成分时模拟拟合度最好，这个也很好理解，本地免疫屏障影响着麻疹疫情的本地风险水平。当然，选择模型时候仍需结合专业知识。</p>
+</div>
+<div id="power-law" class="section level3">
+<h3><span class="header-section-number">4.3.5</span> Power-law</h3>
+<p>在基础模型中，我们假定麻疹疫情只会在具有共同边际的研究单元间传播，且传播系数都一致。考虑到人群的流动性，基础模型明显具有局限性。结合相关协变量，我们同时考虑研究区域的人口百分比(人越多，远距离传播的可能性就越大)和多阶传播(多阶相邻和Power-law)。相关代码如下：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measlesFit_vacc &lt;-<span class="st"> </span>measlesFits_vacc[[<span class="st">&quot;Scovar|unchanged&quot;</span>]]
+measlesFit_nepop &lt;-<span class="st"> </span><span class="kw">update</span>(measlesFit_vacc,
+    <span class="dt">ne =</span> <span class="kw">list</span>(<span class="dt">f =</span> ~<span class="kw">log</span>(pop)), <span class="dt">data =</span> <span class="kw">list</span>(<span class="dt">pop =</span> <span class="kw">population</span>(measlesWeserEms)))
+measlesFit_np2 &lt;-<span class="st"> </span><span class="kw">update</span>(measlesFit_nepop,
+    <span class="dt">ne =</span> <span class="kw">list</span>(<span class="dt">weights =</span> <span class="kw">W_np</span>(<span class="dt">maxlag =</span> <span class="dv">2</span>)))
+measlesFit_powerlaw &lt;-<span class="st"> </span><span class="kw">update</span>(measlesFit_nepop,
+    <span class="dt">ne =</span> <span class="kw">list</span>(<span class="dt">weights =</span> <span class="kw">W_powerlaw</span>(<span class="dt">maxlag =</span> <span class="dv">5</span>)))
+<span class="kw">summary</span>(measlesFit_powerlaw, <span class="dt">idx2Exp =</span> <span class="dv">1</span>:<span class="dv">5</span>, <span class="dt">amplitudeShift =</span> <span class="ot">TRUE</span>, <span class="dt">maxEV =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## 
+## Call: 
+## hhh4(stsObj = object$stsObj, control = control)
+## 
+## Coefficients:
+##                       Estimate   Std. Error
+## exp(ar.1)               0.59314    0.06982 
+## exp(ne.1)              44.52223   55.10724 
+## exp(ne.log(pop))        9.89295    4.96028 
+## exp(end.1)            474.78153  406.32394 
+## exp(end.t)              1.00383    0.00440 
+## end.A(2 * pi * t/52)    1.10678    0.19405 
+## end.s(2 * pi * t/52)   -0.43513    0.15135 
+## end.log(Sprop)          2.32578    0.32256 
+## neweights.d             4.10214    1.05496 
+## overdisp                1.60779    0.23055 
+## 
+## Epidemic dominant eigenvalue:  0.77 
+## 
+## Log-likelihood:   -931.03 
+## AIC:              1882.06 
+## BIC:              1936.74 
+## 
+## Number of units:        17 
+## Number of time points:  103</code></pre>
+<p>通过定义不同形式的空间权重矩阵，可较好地度量传染病的空间蔓延规律，尤其是在人口流动或是交通数据缺乏的情况下。 当然，如果你有相关数据，直接修改weights参数即可。</p>
+</div>
+<div id="random-effect" class="section level3">
+<h3><span class="header-section-number">4.3.6</span> Random effect</h3>
+<p>对于政府决策者，不仅要知道整个研究区域内传染病的时空传播特性，还需要知晓其在区域间的传播异质性，以便采取相应措施来防控传染病。另一方面，很多影响传染病传播的因素较难度量，而随机效应则是解决这类不确定问题的利器。我们在power-law模型的基础上构建三个成分的随机效应，具体代码如下：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measlesFit_ri &lt;-<span class="st"> </span><span class="kw">update</span>(measlesFit_powerlaw,
+ <span class="dt">end =</span> <span class="kw">list</span>(<span class="dt">f =</span> <span class="kw">update</span>(<span class="kw">formula</span>(measlesFit_powerlaw)$end, ~<span class="st"> </span>. +<span class="st"> </span><span class="kw">ri</span>() -<span class="st"> </span><span class="dv">1</span>)),
+ <span class="dt">ar =</span> <span class="kw">list</span>(<span class="dt">f =</span> <span class="kw">update</span>(<span class="kw">formula</span>(measlesFit_powerlaw)$ar, ~<span class="st"> </span>. +<span class="st"> </span><span class="kw">ri</span>() -<span class="st"> </span><span class="dv">1</span>)),
+ <span class="dt">ne =</span> <span class="kw">list</span>(<span class="dt">f =</span> <span class="kw">update</span>(<span class="kw">formula</span>(measlesFit_powerlaw)$ne, ~<span class="st"> </span>. +<span class="st"> </span><span class="kw">ri</span>() -<span class="st"> </span><span class="dv">1</span>)))</code></pre></div>
+<pre><code>## [1] &quot;false convergence (8)&quot;
+## Update of variance parameters in iteration  5  unreliable</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">ranef</span>(measlesFit_ri, <span class="dt">tomatrix =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>##       ar.ri(iid)  ne.ri(iid) end.ri(iid)
+## 03401  0.0000000 -0.05673057  -1.0044596
+## 03402  1.2234776  0.04311721   1.5263983
+## 03403 -0.8272548  1.55877779  -0.6198755
+## 03404 -0.3772432 -0.50126451  -1.1188042
+## 03405  0.0000000 -0.09105187  -1.2822860
+## 03451 -0.5241670 -0.11345751   0.4959956</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">for (comp in <span class="kw">c</span>(<span class="st">&quot;end&quot;</span>,<span class="st">&quot;ar&quot;</span>, <span class="st">&quot;ne&quot;</span>)) {
+<span class="kw">print</span>(<span class="kw">plot</span>(measlesFit_ri, <span class="dt">type =</span> <span class="st">&quot;ri&quot;</span>, <span class="dt">component =</span> comp, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="fl">6.6</span>,<span class="fl">8.8</span>),
+ <span class="dt">labels =</span> <span class="kw">list</span>(<span class="dt">cex =</span> <span class="fl">0.6</span>), <span class="dt">at =</span> <span class="kw">seq</span>(-<span class="fl">1.7</span>, <span class="fl">1.7</span>, <span class="dt">length.out =</span> <span class="dv">15</span>)))
+}</code></pre></div>
+<p><img src="Book_files/figure-html/randomeffect-1.png" width="672" /><img src="Book_files/figure-html/randomeffect-2.png" width="672" /><img src="Book_files/figure-html/randomeffect-3.png" width="672" /></p>
+<p>通过这三图分别代表局部特性成分、时间自相关成分和空间流行成分的随机效应，可知03460和03457区域的局部特性成分较大，03454和03457区域的时间自相关成分较大，0.453和03452的空间流行成分较大，故相应措施应运而生：针对03460和03457区域，需加强本地麻疹免疫屏障建设来降低麻疹的本地风险；针对03454和03457区域，则需加强麻疹疫情的应急处置工作，及时控制疫情发展；针对0.453和03452区域则需控制其周边区域麻疹疫情对目标区域的影响。</p>
+</div>
+</div>
+<div id="section-4.4" class="section level2">
+<h2><span class="header-section-number">4.4</span> 结语</h2>
+<p>本文比较粗糙地介绍了时空多成分模型在R中的实现步骤及相关注意事项，当然，你还可以对模型进行扩展。接下来打算基于<a href="https://www.rstudio.com/products/shiny/">shiny</a>来开发时空多成分模型的app，也是作为大疫情数据分析平台的一部分。若有什么问题，请及时联系<a href="zhangbing4502431@outlook.com">张兵:Spatial-R</a>，谢谢！</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reproduction-numbers-during-epidemics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vaccine-epidemiology-a-short-insight.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Post/Method3.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

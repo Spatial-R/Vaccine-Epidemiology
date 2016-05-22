@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Vaccine Epidemiology</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This books includes some reading notes from the published books or papers, analysis method with some real datasets and short insight on the vaccine epidemiology">
+  <meta name="generator" content="bookdown 0.0.71 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Vaccine Epidemiology" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This books includes some reading notes from the published books or papers, analysis method with some real datasets and short insight on the vaccine epidemiology" />
+  <meta name="github-repo" content="spatial-r/Vaccineepidemiology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vaccine Epidemiology" />
+  
+  <meta name="twitter:description" content="This books includes some reading notes from the published books or papers, analysis method with some real datasets and short insight on the vaccine epidemiology" />
+  
+
+<meta name="author" content="Bing Zhang">
+
+<meta name="date" content="2016-05-22">
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="spatial-temporal-multicomponent-model.html">
+<link rel="next" href="incomplete-vaccination-with-an-imperfect-vaccine.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Vaccine Epidemiology</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html"><i class="fa fa-check"></i><b>2</b> Bayesian Infectious Dynamics Model in Discrete Time</a><ul>
+<li class="chapter" data-level="2.1" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#model-and-parameters"><i class="fa fa-check"></i><b>2.2</b> Model and Parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html"><i class="fa fa-check"></i><b>3</b> Reproduction numbers during epidemics</a><ul>
+<li class="chapter" data-level="3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#basic-reproduction-number"><i class="fa fa-check"></i><b>3.1</b> Basic reproduction number</a></li>
+<li class="chapter" data-level="3.2" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#package-r0"><i class="fa fa-check"></i><b>3.2</b> Package R0</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#example-and-code"><i class="fa fa-check"></i><b>3.2.1</b> Example and code</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#package-epiestim"><i class="fa fa-check"></i><b>3.3</b> Package EpiEstim</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#example-and-code-1"><i class="fa fa-check"></i><b>3.3.1</b> Example and code</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html"><i class="fa fa-check"></i><b>4</b> Spatial-temporal Multicomponent Model</a><ul>
+<li class="chapter" data-level="4.1" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.1"><i class="fa fa-check"></i><b>4.1</b> 模型综述</a></li>
+<li class="chapter" data-level="4.2" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.2"><i class="fa fa-check"></i><b>4.2</b> 模型优点</a></li>
+<li class="chapter" data-level="4.3" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3"><i class="fa fa-check"></i><b>4.3</b> 具体实例</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#sts"><i class="fa fa-check"></i><b>4.3.1</b> STS数据</a></li>
+<li class="chapter" data-level="4.3.2" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3.2"><i class="fa fa-check"></i><b>4.3.2</b> 数据可视化</a></li>
+<li class="chapter" data-level="4.3.3" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3.3"><i class="fa fa-check"></i><b>4.3.3</b> 模型拟合</a></li>
+<li class="chapter" data-level="4.3.4" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.3.4"><i class="fa fa-check"></i><b>4.3.4</b> 纳入协变量</a></li>
+<li class="chapter" data-level="4.3.5" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#power-law"><i class="fa fa-check"></i><b>4.3.5</b> Power-law</a></li>
+<li class="chapter" data-level="4.3.6" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#random-effect"><i class="fa fa-check"></i><b>4.3.6</b> Random effect</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="spatial-temporal-multicomponent-model.html"><a href="spatial-temporal-multicomponent-model.html#section-4.4"><i class="fa fa-check"></i><b>4.4</b> 结语</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html"><i class="fa fa-check"></i><b>5</b> Vaccine Epidemiology: A short insight</a><ul>
+<li class="chapter" data-level="5.1" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#background"><i class="fa fa-check"></i><b>5.1</b> Background</a></li>
+<li class="chapter" data-level="5.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-epdemiology"><i class="fa fa-check"></i><b>5.3</b> Vaccine Epdemiology</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-related-items"><i class="fa fa-check"></i><b>5.3.1</b> Vaccine-related Items</a></li>
+<li class="chapter" data-level="5.3.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-strategies"><i class="fa fa-check"></i><b>5.3.2</b> Vaccine Strategies</a></li>
+<li class="chapter" data-level="5.3.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#measure-indicators"><i class="fa fa-check"></i><b>5.3.3</b> Measure Indicators</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html"><i class="fa fa-check"></i><b>6</b> Incomplete vaccination with an imperfect vaccine</a><ul>
+<li class="chapter" data-level="6.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
+<li class="chapter" data-level="6.2" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#introduction-2"><i class="fa fa-check"></i><b>6.2</b> Introduction</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#immunity-against-infection"><i class="fa fa-check"></i><b>6.2.1</b> Immunity against infection</a></li>
+<li class="chapter" data-level="6.2.2" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#immunity-against-tramsimission-and-disease"><i class="fa fa-check"></i><b>6.2.2</b> Immunity against tramsimission and disease</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#method"><i class="fa fa-check"></i><b>6.3</b> Method</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#data"><i class="fa fa-check"></i><b>6.3.1</b> Data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#model"><i class="fa fa-check"></i><b>6.3.2</b> Model</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#results"><i class="fa fa-check"></i><b>6.4</b> Results</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Vaccine Epidemiology</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="vaccine-epidemiology-a-short-insight" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Vaccine Epidemiology: A short insight</h1>
+<p>What is right to be done cannot be done too soon!</p>
+<div id="background" class="section level2">
+<h2><span class="header-section-number">5.1</span> Background</h2>
+<p>This is a short insight into the vaccine epidemiology after working in the department of immunization program of Zhejiang provincial center for disease control and protection for nearly two years. The reason to write this blog is to sum up the knowledge on the vaccination research program and extract some useful ideas or clues to do the further investigations into the vaccine epidemiology. Here, I have just simply defined the vaccine epidemiology as all the epidemiology issues related to both the vaccine and infectious diseases. Fox instance, decision makers may have great interests to investigate how the efficiency of certain vaccine on infectious disease or test whether there is a cross-protection for other types of vires in the clinic trials or not. Compared to the traditional epidemiology, vaccine epidemiology has focused more on the vaccine than the disease. As my primary interest is about the resparitory disease, many analysis methods talk about in the following sections may not be sutable for the vector-borne or other types of infectious diseases. If you have any questions, just feel free to contact me(Email: <a href="mailto:zhangbing4502431@outlook.com">zhangbing4502431@outlook.com</a>).</p>
+</div>
+<div id="introduction-1" class="section level2">
+<h2><span class="header-section-number">5.2</span> Introduction</h2>
+<p>Infectious diseases, also called communicable disease, are caused by pathogenic microorganisms, such as bacteria, viruses, parasites or fungi; the diseases can be spread, directly or indirectly, from one person to another. <strong>Vaccination is the administration of antigenic material (a <a href="https://en.wikipedia.org/wiki/Vaccine">vaccine</a>) to stimulate an individual’s immune system to develop adaptive immunity to a pathogen, which is the most powerful and cost-effective way to prevente the infectious disease</strong> <span class="citation">(Meireles <a href="#ref-Meireles_2015">2015</a>)</span>. Generally speaking, a vaccine typically contains an intact but inactivated (non-infective) or attenuated (with reduced infectivity) forms of the pathogensagent that resembles a disease-causing micro-organism and primes the immune system <span class="citation">(“Vaccine - Wikipedia, the Free Encyclopedia” <a href="#ref-greycite40640">2016</a>)</span>. Acoording to the report of World Health Organization, the licensed vaccines are currently available to prevent or contribute to the prevention and control of twenty-five preventable infections.</p>
+<p>Epidemiology is the study and analysis of the patterns, causes, and effects of health and disease conditions in defined populations. It is the cornerstone of public health, and shapes policy decisions and evidence-based practice by identifying risk factors for disease and targets for preventive healthcare <span class="citation">(“Epidemiology - Wikipedia, the Free Encyclopedia” <a href="#ref-greycite40642">2016</a>)</span>. As we emphasized particularly on infectious diseases, it is important to understand three essential elements to the infectious disease: source of infection(host), route of transmission(including droplet contact, Fecal-oral transmission, Sexual transmission, Oral transmission, Transmission by direct contact, Vertical transmission, Iatrogenic transmission, and Vector-borne transmission) and susceptible population(population with no immunity against pathogens). Therefore, the priority in vaccine epidemiology is to explore the effect of vaccine on the distribution of host and susceptible population, as well as the impact on the transmissibility.</p>
+<p>Despite this obvious progress and the established programs, some vaccine-preventable diseases have re-emerged worldwide, such as pertussis and measles <span class="citation">(Wicker and Maltezou <a href="#ref-Wicker_2014">2014</a>)</span>. Moreover, numerous large-scale Mumps and vericella outbreaks have occurred in the vaccinated populations with high vaccination coverage<span class="citation">(Rubin et al. <a href="#ref-Rubin_2011">2011</a>)</span>. Thus, deep insight into the vaccine epidemiology to sustain the achivement on the widespread immunity and take targeted vaccine-related prophylatical measures to infectious disease is neccessary.</p>
+</div>
+<div id="vaccine-epdemiology" class="section level2">
+<h2><span class="header-section-number">5.3</span> Vaccine Epdemiology</h2>
+<div id="vaccine-related-items" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Vaccine-related Items</h3>
+<p>Before we talk about the vaccine epidemiology, we should figure out three definitions of vaccine related items: <strong>vaccine efficiency</strong>, <strong>vaccine effectiveness</strong> and <strong>vaccine impact</strong>. Vaccine efficacy is commonly defined as the direct effect of a vaccine measured in <strong>pre-licensure randomized clinical trials</strong>, where vaccination is allocated under optimal conditions. Vaccine (direct) effectiveness is estimated by comparing vaccinated and unvaccinated individuals exposed to the same vaccination programme in the <strong>observational post-licensure studies</strong>(case-control and cohort study from the same population). The impact of a vaccination programme, defined here as the population prevented fraction when exposure is the programme, is measured by comparing populations with and without a vaccination programme, most commonly the same population before and after vaccination or the cluster randomized trials <span class="citation">(Hanquet et al. <a href="#ref-Hanquet_2013">2013</a>)</span>.</p>
+</div>
+<div id="vaccine-strategies" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Vaccine Strategies</h3>
+<p>The common interventions related to the infectious disease include vaccination, screening(allows the infected individuals to be treated before they progress to be more server disease and /or infect other individuals), social distancing(isolation of susceptible individuals, school closure, travel restriction and cancellation of mass gathering such as football matchs), post-exposure treatment(chemotreament opinons such as antimicrobials can be dealt with static models).</p>
+<p>A optimal vaccination strategy need take the following situation into consideration to maximize the health impact and minimize the logistical barries: vaccine supplies, vaccination time, and vaccination situation with nonvccine-related factors changed. Situation in the vaccine supply can be divided into two type: limited vaccine supply or full vaccine supply. The vaccination time is focused on the time when to carry out the vaccination program. Use of the vaccine prior to the outbreak is considered as preemptive vaccination, while the vaccination after the outbreak begins is referred to as the reactive vaccination <span class="citation">(Boettiger and Hastings <a href="#ref-Boettiger_2013">2013</a>)</span>. How to allocate the limited vaccine in the reactive vaccination compaign is complicated but valuable. Moreover, it is also needed pay great attention to the delay time in reactive vaccination campaigns. Previous publications have found that vaccination delay time in a outbreak setting also shape the performance of different vaccine strategies <span class="citation">(A. S. Azman and Lessler <a href="#ref-Azman_2014">2014</a>)</span>. In contrast to regularly vaccination compaigns, ractive campaigns are often subjected to limited vaccine, and logistical delay forcing vaccinations to make difficult allocation decisions.</p>
+<p>Some infectious diseases, especially for the respiratory and vector-borne infectious diseases were deeply influenced by other nonvccine-related factors such as the meteorological factors(the temperature and relative humility) and air pollution(particle matter, O3 and NO2)<span class="citation">(Cowling et al. <a href="#ref-Cowling_2013">2013</a>)</span> <span class="citation">(Passos et al. <a href="#ref-Passos_2014">2014</a>)</span>. Some literatures have reported that the combination of low temperature and high humidity contributes more to respiratory infections, duing to the fact that recovery of the virus was higher at a higher relative humidity and the stability of the aerosol was at a maximum with relative humidity of 60%. Moreover, nature disaster or the extreme weather such as typhoon and heat wave may change the transmission and susceptibility to communicable disease. Therefore, we need motivate considerations to the influence of nonvccine-related factors on vaccination strategies.</p>
+<p>For many multi-strain pathogens there is evidence of a board, short-lived immune response immediately after infection with one strain that confers at least partial cross-protection against all strains of that pathogen <span class="citation">(Reich et al. <a href="#ref-Reich_2013">2013</a>)</span>. At the other hand, infections with one pathogen can affect the sverity, infectivity, or susceptibility to subsequent infection with other pathogens, and these effects can have profound clinical, epidemiological, and evolutionary implications <span class="citation">(Shrestha et al. <a href="#ref-Shrestha_2013">2013</a>)</span>. While the nature, strength, timing of the putative interaction between the influenza and pneumococcal pneumonia were well indentified on the individual and population levels <span class="citation">(Weinberger et al. <a href="#ref-Weinberger_2011">2011</a>)</span> <span class="citation">(Shrestha et al. <a href="#ref-Shrestha_2013">2013</a>)</span>. However, whether the interaction among other infectious disease such as the hepatitis A, B, C and E is not clear.</p>
+</div>
+<div id="measure-indicators" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Measure Indicators</h3>
+<p>The measure indicators in the vaccine epidemioloy can be separated into three parts: regular epidemiological indicators, sociological indicators and indicators in special situation. The regular epidemiological indicators are attack rate, morbidity, mortality, fatality rate, et.al. There are no difference to the difination of that indicators between the vaccine epidemiology and tradtional epidemiology.</p>
+<p>Sociological indicators includes disability adjusted life year (DLAY) and cost benefit (effectivness) rate in the health ecconomic analysis. DLAY, which was jointly developed for the Global Burden of Disease (GBD) study by the World Bank, the World Health Organization (WHO) and the Harvard School of Public Health in the late 1980s, measures both mortality and morbidity and combines them in one single figure, allowing the comparison of health hazards and providing an evidence-based tool for healthcare policy prioritization and for monitoring intervention effects. Since its development, the DALY measure has been used widely in both national and global disease burden and cost-effectiveness studies <span class="citation">(OOSTVOGELS et al. <a href="#ref-OOSTVOGELS_2014">2014</a>)</span>. A specific property of infectious diseases that distinguishes them from chronic diseases is that infected persons who are treated may not only be cured (i.e. curative intervention) or protected against an infection (i.e. preventive intervention such as vaccination), but also that a successful intervention might reduce or prevent transmission of the pathogen to other susceptible persons(called herd immunity or indirect effect). If herd immunity has a large impact on transmission, dynamic transmission models are recommended for health economic analyses. <span class="citation">(Jit and Brisson <a href="#ref-Jit_2011">2011</a>)</span>. Mathematical modelling offers public health planners the ability to make predictions about the impact of emerging diseases as well as the effects of possible response and control measures. Such models are needed to bridge the gap between clinical trials and population-level use. This is particularly crucial for infectious diseases, where mass interventions such as vaccination and screening can result in effects on a population-level not seen on an individual level, including herd immunity, changes in the epidemiology of infection and changes to pathogen ecology as a consequence of selective pressure. The taxonomy categorises models based on whether (i) states in the model change over time (dynamic) or not (static), (ii) changes to the model occur at random (stochastic) or are fixed (deterministic), (iii) the model averages the behaviour of populations (aggregate) or tracks individuals (individual-based), (iv) events occur in discrete or continuous time, (v) individuals can enter or leave the population (open) or not (closed) and (vi) the model’s equations are linear or non-linear functions or parameters.</p>
+<p>The indicators in special situation contain basic reproduction number(RO) and Mininum relative single does efficacy. Reprouction number, is the number of secondary cases generated by a single individual over its entire infectious period in a complete susceptile population , which is commonly used to characterize pathogen transmissibility during a epidemic. The monitoring of R over time provides the feedback on the effectiveness of interventions <span class="citation">(Griffin <a href="#ref-Griffin_2015">2015</a>)</span>. Mininum relative single does efficacy was firstly used to figure out, under what conditions the use of single-dose compaigns are expected to be as or more effictive than the two-dose compaigns with the same amount of vaccine <span class="citation">(Andrew S. Azman et al. <a href="#ref-Azman_2015">2015</a>)</span>.</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2><span class="header-section-number">5.4</span> Conclusion</h2>
+<p>This is a short insight into vaccine epdemiology on the population level. Other issues like the adverse effects following immunization and vaccine clinic trials are not discussed in this blog. However, if you have any ideas on the AEFI or not things, just contact with me. Here, i will point out serveral analysis direction on vaccine epidemiology and hope that more people will contribute themself to the vaccine analysis. 1. The impact or ecconomic health analysis of the vaccine intervention on infectious disease. 2. Nonvccine-related factors such as meterological factors or air pollutant on infectious disease. 3. The spatial or temporal distribution on infectious disease and the outbreak detection.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Meireles_2015">
+<p>Meireles, Liliane C. 2015. “Three Decades of Hepatitis B Control with Vaccination.” <em>WJH</em> 7 (18). Baishideng Publishing Group Co., Limited (formerly WJG Press): 2127. doi:<a href="https://doi.org/10.4254/wjh.v7.i18.2127">10.4254/wjh.v7.i18.2127</a>.</p>
+</div>
+<div id="ref-greycite40640">
+<p>“Vaccine - Wikipedia, the Free Encyclopedia.” 2016. <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Vaccine" class="uri">https://en.wikipedia.org/wiki/Vaccine</a>. <a href="https://en.wikipedia.org/wiki/Vaccine" class="uri">https://en.wikipedia.org/wiki/Vaccine</a>.</p>
+</div>
+<div id="ref-greycite40642">
+<p>“Epidemiology - Wikipedia, the Free Encyclopedia.” 2016. <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Epidemiology" class="uri">https://en.wikipedia.org/wiki/Epidemiology</a>. <a href="https://en.wikipedia.org/wiki/Epidemiology" class="uri">https://en.wikipedia.org/wiki/Epidemiology</a>.</p>
+</div>
+<div id="ref-Wicker_2014">
+<p>Wicker, Sabine, and Helena C Maltezou. 2014. “Vaccine-Preventable Diseases in Europe: Where Do We Stand?” <em>Expert Review of Vaccines</em> 13 (8). Informa Healthcare: 979–87. doi:<a href="https://doi.org/10.1586/14760584.2014.933077">10.1586/14760584.2014.933077</a>.</p>
+</div>
+<div id="ref-Rubin_2011">
+<p>Rubin, S. A., M. A. Link, C. J. Sauder, C. Zhang, L. Ngo, B. K. Rima, and W. P. Duprex. 2011. “Recent Mumps Outbreaks in Vaccinated Populations: No Evidence of Immune Escape.” <em>Journal of Virology</em> 86 (1). American Society for Microbiology: 615–20. doi:<a href="https://doi.org/10.1128/jvi.06125-11">10.1128/jvi.06125-11</a>.</p>
+</div>
+<div id="ref-Hanquet_2013">
+<p>Hanquet, Germaine, Marta Valenciano, François Simondon, and Alain Moren. 2013. “Vaccine Effects and Impact of Vaccination Programmes in Post-Licensure Studies.” <em>Vaccine</em> 31 (48). Elsevier BV: 5634–42. doi:<a href="https://doi.org/10.1016/j.vaccine.2013.07.006">10.1016/j.vaccine.2013.07.006</a>.</p>
+</div>
+<div id="ref-Boettiger_2013">
+<p>Boettiger, C., and A. Hastings. 2013. “No Early Warning Signals for Stochastic Transitions: Insights from Large Deviation Theory.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 280 (1766). The Royal Society: 20131372–2. doi:<a href="https://doi.org/10.1098/rspb.2013.1372">10.1098/rspb.2013.1372</a>.</p>
+</div>
+<div id="ref-Azman_2014">
+<p>Azman, A. S., and J. Lessler. 2014. “Reactive Vaccination in the Presence of Disease Hotspots.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 282 (1798). The Royal Society: 20141341–1. doi:<a href="https://doi.org/10.1098/rspb.2014.1341">10.1098/rspb.2014.1341</a>.</p>
+</div>
+<div id="ref-Cowling_2013">
+<p>Cowling, Benjamin J., Dennis K. M. Ip, Vicky J. Fang, Piyarat Suntarattiwong, Sonja J. Olsen, Jens Levy, Timothy M. Uyeki, et al. 2013. “Aerosol Transmission Is an Important Mode of Influenza A Virus Spread.” <em>Nature Communications</em> 4 (June). Nature Publishing Group. doi:<a href="https://doi.org/10.1038/ncomms2922">10.1038/ncomms2922</a>.</p>
+</div>
+<div id="ref-Passos_2014">
+<p>Passos, Saulo Duarte, Rosa Estela Gazeta, Ana Paula Felgueiras, Patr\iciaCosta Beneli, and Micheline de S. Z. S. Coelho. 2014. “Do Pollution and Climate Influence Respiratory Tract Infections in Children?” <em>Revista Da Associação Médica Brasileira</em> 60 (3). FapUNIFESP (SciELO): 276–82. doi:<a href="https://doi.org/10.1590/1806-9282.60.03.018">10.1590/1806-9282.60.03.018</a>.</p>
+</div>
+<div id="ref-Reich_2013">
+<p>Reich, N. G., S. Shrestha, A. A. King, P. Rohani, J. Lessler, S. Kalayanarooj, I.-K. Yoon, R. V. Gibbons, D. S. Burke, and D. A. T. Cummings. 2013. “Interactions Between Serotypes of Dengue Highlight Epidemiological Impact of Cross-Immunity.” <em>Journal of The Royal Society Interface</em> 10 (86). The Royal Society: 20130414–4. doi:<a href="https://doi.org/10.1098/rsif.2013.0414">10.1098/rsif.2013.0414</a>.</p>
+</div>
+<div id="ref-Shrestha_2013">
+<p>Shrestha, S., B. Foxman, D. M. Weinberger, C. Steiner, C. Viboud, and P. Rohani. 2013. “Identifying the Interaction Between Influenza and Pneumococcal Pneumonia Using Incidence Data.” <em>Science Translational Medicine</em> 5 (191). American Association for the Advancement of Science (AAAS): 191ra84–191ra84. doi:<a href="https://doi.org/10.1126/scitranslmed.3005982">10.1126/scitranslmed.3005982</a>.</p>
+</div>
+<div id="ref-Weinberger_2011">
+<p>Weinberger, D. M., L. Simonsen, R. Jordan, C. Steiner, M. Miller, and C. Viboud. 2011. “Impact of the 2009 Influenza Pandemic on Pneumococcal Pneumonia Hospitalizations in the United States.” <em>Journal of Infectious Diseases</em> 205 (3). Oxford University Press (OUP): 458–65. doi:<a href="https://doi.org/10.1093/infdis/jir749">10.1093/infdis/jir749</a>.</p>
+</div>
+<div id="ref-OOSTVOGELS_2014">
+<p>OOSTVOGELS, A. J. J. M., G. A. DE WIT, B. JAHN, A. CASSINI, E. COLZANI, C. DE WAURE, M. E. E. KRETZSCHMAR, U. SIEBERT, N. MÜHLBERGER, and M.-J. J. MANGEN. 2014. “Use of DALYs in Economic Analyses on Interventions for Infectious Diseases: A Systematic Review.” <em>Epidemiol. Infect.</em> 143 (09). Cambridge University Press (CUP): 1791–1802. doi:<a href="https://doi.org/10.1017/s0950268814001940">10.1017/s0950268814001940</a>.</p>
+</div>
+<div id="ref-Jit_2011">
+<p>Jit, Mark, and Marc Brisson. 2011. “Modelling the Epidemiology of Infectious Diseases for Decision Analysis.” <em>PharmacoEconomics</em> 29 (5). Springer Science <span class="math inline">\(\mathplus\)</span> Business Media: 371–86. doi:<a href="https://doi.org/10.2165/11539960-000000000-00000">10.2165/11539960-000000000-00000</a>.</p>
+</div>
+<div id="ref-Griffin_2015">
+<p>Griffin, Jamie T. 2015. “The Interaction Between Seasonality and Pulsed Interventions Against Malaria in Their Effects on the Reproduction Number.” Edited by Katia Koelle. <em>PLOS Computational Biology</em> 11 (1). Public Library of Science (PLoS): e1004057. doi:<a href="https://doi.org/10.1371/journal.pcbi.1004057">10.1371/journal.pcbi.1004057</a>.</p>
+</div>
+<div id="ref-Azman_2015">
+<p>Azman, Andrew S., Francisco J. Luquero, Iza Ciglenecki, Rebecca F. Grais, David A. Sack, and Justin Lessler. 2015. “The Impact of a One-Dose Versus Two-Dose Oral Cholera Vaccine Regimen in Outbreak Settings: A Modeling Study.” Edited by Mirjam E. E. Kretzschmar. <em>PLoS Med</em> 12 (8). Public Library of Science (PLoS): e1001867. doi:<a href="https://doi.org/10.1371/journal.pmed.1001867">10.1371/journal.pmed.1001867</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="spatial-temporal-multicomponent-model.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="incomplete-vaccination-with-an-imperfect-vaccine.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/Post/Insight1.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
