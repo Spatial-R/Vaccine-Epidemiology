@@ -25,7 +25,7 @@
 
 <meta name="author" content="Bing Zhang">
 
-<meta name="date" content="2016-05-22">
+<meta name="date" content="2016-05-29">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -109,10 +109,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Vaccine Epidemiology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background</a></li>
 <li class="chapter" data-level="2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html"><i class="fa fa-check"></i><b>2</b> Bayesian Infectious Dynamics Model in Discrete Time</a><ul>
 <li class="chapter" data-level="2.1" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
 <li class="chapter" data-level="2.2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#model-and-parameters"><i class="fa fa-check"></i><b>2.2</b> Model and Parameters</a></li>
+<li class="chapter" data-level="2.3" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a></li>
+<li class="chapter" data-level="2.4" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#examples-and-codes"><i class="fa fa-check"></i><b>2.4</b> Examples and Codes</a></li>
+<li class="chapter" data-level="2.5" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#conclusion"><i class="fa fa-check"></i><b>2.5</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html"><i class="fa fa-check"></i><b>3</b> Reproduction numbers during epidemics</a><ul>
 <li class="chapter" data-level="3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#basic-reproduction-number"><i class="fa fa-check"></i><b>3.1</b> Basic reproduction number</a></li>
@@ -144,7 +147,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.3.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-strategies"><i class="fa fa-check"></i><b>5.3.2</b> Vaccine Strategies</a></li>
 <li class="chapter" data-level="5.3.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#measure-indicators"><i class="fa fa-check"></i><b>5.3.3</b> Measure Indicators</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion-1"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html"><i class="fa fa-check"></i><b>6</b> Incomplete vaccination with an imperfect vaccine</a><ul>
 <li class="chapter" data-level="6.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
@@ -218,7 +221,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
  GT.flu&lt;-<span class="kw">generation.time</span>(<span class="st">&quot;gamma&quot;</span>, <span class="kw">c</span>(<span class="fl">2.6</span>,<span class="dv">1</span>))  
  res.R &lt;-<span class="st"> </span><span class="kw">estimate.R</span>(Germany<span class="fl">.1918</span>, <span class="dt">GT=</span>GT.flu,<span class="dt">methods=</span><span class="kw">c</span>(<span class="st">&quot;ML&quot;</span>))
  <span class="kw">plotfit</span>(res.R)</code></pre></div>
-<p><img src="Book_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="Book_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> ################ senzitively analysis ##################
  <span class="kw">sensitivity.analysis</span>(Germany<span class="fl">.1918</span>, <span class="dt">GT.type=</span><span class="st">&quot;gamma&quot;</span>,<span class="dt">GT.mean=</span><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>), 
       <span class="dt">GT.sd.range=</span><span class="dv">1</span>, <span class="dt">begin=</span><span class="dv">1</span>, <span class="dt">end=</span><span class="dv">27</span>,<span class="dt">est.method=</span><span class="st">&quot;EG&quot;</span>, <span class="dt">sa.type=</span><span class="st">&quot;GT&quot;</span>)</code></pre></div>
@@ -255,7 +258,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
  <span class="kw">data</span>(<span class="st">&quot;Flu2009&quot;</span>)
 ## estimate the instantaneous reproduction number (method &quot;NonParametricSI&quot;) 
 <span class="kw">EstimateR</span>(Flu2009$Incidence, <span class="dt">T.Start=</span><span class="dv">2</span>:<span class="dv">26</span>, <span class="dt">T.End=</span><span class="dv">8</span>:<span class="dv">32</span>, <span class="dt">method=</span><span class="st">&quot;NonParametricSI&quot;</span>, <span class="dt">SI.Distr=</span>Flu2009$SI.Distr, <span class="dt">plot=</span><span class="ot">TRUE</span>, <span class="dt">leg.pos=</span><span class="kw">xy.coords</span>(<span class="dv">1</span>,<span class="dv">3</span>)) </code></pre></div>
-<p><img src="Book_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="Book_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <pre><code>## $R
 ##    T.Start T.End   Mean(R)     Std(R) Quantile.0.025(R) Quantile.0.05(R)
 ## 1        2     8 1.7356089 0.40908694        1.02863184        1.1218113

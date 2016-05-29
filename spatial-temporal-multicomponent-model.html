@@ -25,7 +25,7 @@
 
 <meta name="author" content="Bing Zhang">
 
-<meta name="date" content="2016-05-22">
+<meta name="date" content="2016-05-29">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -109,10 +109,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Vaccine Epidemiology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background</a></li>
 <li class="chapter" data-level="2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html"><i class="fa fa-check"></i><b>2</b> Bayesian Infectious Dynamics Model in Discrete Time</a><ul>
 <li class="chapter" data-level="2.1" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
 <li class="chapter" data-level="2.2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#model-and-parameters"><i class="fa fa-check"></i><b>2.2</b> Model and Parameters</a></li>
+<li class="chapter" data-level="2.3" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a></li>
+<li class="chapter" data-level="2.4" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#examples-and-codes"><i class="fa fa-check"></i><b>2.4</b> Examples and Codes</a></li>
+<li class="chapter" data-level="2.5" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#conclusion"><i class="fa fa-check"></i><b>2.5</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html"><i class="fa fa-check"></i><b>3</b> Reproduction numbers during epidemics</a><ul>
 <li class="chapter" data-level="3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#basic-reproduction-number"><i class="fa fa-check"></i><b>3.1</b> Basic reproduction number</a></li>
@@ -144,7 +147,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.3.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-strategies"><i class="fa fa-check"></i><b>5.3.2</b> Vaccine Strategies</a></li>
 <li class="chapter" data-level="5.3.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#measure-indicators"><i class="fa fa-check"></i><b>5.3.3</b> Measure Indicators</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion-1"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html"><i class="fa fa-check"></i><b>6</b> Incomplete vaccination with an imperfect vaccine</a><ul>
 <li class="chapter" data-level="6.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
@@ -180,7 +183,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="spatial-temporal-multicomponent-model" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Spatial-temporal Multicomponent Model</h1>
-<p>Welocome to the surveillance project again! 这是一篇针对<a href="http://surveillance.r-forge.r-project.org/">Surveillance</a>程序包中<strong>时空多成分模型</strong>( <strong>Spatial-temporal Multicomponent Model</strong>)的文章。时空多成分模型是surveillance程序包提供的四大分析模块之一(<strong>Outbreaks detection</strong>, <strong>Endemic-epidemic Spatio-temporal Point Process Intensity Model</strong>, <strong>SIR event history of a fixed population</strong> 和 <strong>Spatial-temporal Multicomponent Model</strong>)，自去年10月份开始接触，期间走了很多弯路(学习过程)，故将相关教训在此文中分享，希望对时空流行病学感兴趣的朋友能够尽快熟悉该模型并能应用于自己的数据。英文功底不错的建议阅读该程序包的英文说明<a href="http://arxiv.org/pdf/1411.0416.pdf">文档</a>。如果您发现此文中的错误，也恳请留言指出，在此特表感谢。</p>
+<p>Welocome to the surveillance project again! 这是一篇针对<a href="http://surveillance.r-forge.r-project.org/">Surveillance</a>程序包中<strong>时空多成分模型</strong>( <strong>Spatial-temporal Multicomponent Model</strong>)的文章。时空多成分模型是surveillance程序包提供的四大分析模块之一(<strong>Outbreaks detection</strong>, <strong>Endemic-epidemic Spatio-temporal Point Process Intensity Model</strong>, <strong>SIR event history of a fixed population</strong> 和 <strong>Spatial-temporal Multicomponent Model</strong>)，自去年10月份开始接触，期间走了很多弯路(学习过程)，故将相关教训在此文中分享，希望对时空流行病学感兴趣的朋友能够尽快熟悉该模型并能应用于自己的数据。英文功底不错的建议阅读该程序包的英文说明<a href="http://arxiv.org/pdf/1411.0416.pdf">文档</a>。</p>
 <div id="section-4.1" class="section level2">
 <h2><span class="header-section-number">4.1</span> 模型综述</h2>
 <p>时空多成分模型(Spatial-temporal Multicomponent Model)的简约版最初由<a href="http://www.researchgate.net/profile/Michael_Hoehle/publication/45138457_A_statistical_framework_for_the_analysis_of_multivariate_infectious_disease_surveillance_data/links/0c960520b310bb8378000000.pdf">Held et al. (2005)</a>提出，并应用于麻疹疫情中[PS: 基于浙江省麻疹疫情已写了篇类似的文章，已投中华流行病学杂志]。<a href="http://biostatistics.oxfordjournals.org/content/7/3/422.full">Leonhard Held et al.(2006)</a>在“A two-componet model for counts of infectious disease”一文中构建了随机双成分(<strong>相互独立</strong>)模型，包括<strong>局部特性成分</strong>(Endemic Component)和<strong>时间流行成分</strong>(Epidemic Component)，其中局部特性成分控制季节效应的影响，时间流行成分同时考虑了疾病疫情的时间相关性和暴发影响。该模型假设时序数据服从Generalised Branching Process with Immigration， 分别对甲肝和乙肝进行了拟合。在surveillance程序包中，基础模型中将时序数据分为三个成分：局部特性成分(Endemic component, end)、时间自相关成分(Autoregressive component，ar)和空间流行成分(Epidemic component, ne)，并在公式中分别用<span class="math inline">\(ν_(i,t)\)</span>、<span class="math inline">\(λ_(i,t)\)</span>和<span class="math inline">\(ϕ_(i,t)\)</span>表示。其中局部特性成分反映疫情的本地风险情况，时间自相关成分反映的是过去时段疫情在时间维度上产生的影响，而空间流行成分反映的是邻近单元对目标单元产生的影响(可根据多种空间权重矩阵来定义<strong>邻近</strong>)。具体的公式如下：</p>
@@ -213,16 +216,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="section-4.3.2" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> 数据可视化</h3>
 <p>对于sts数据，surveillance程序包提供了一系列简约的方式来进行数据可视化(时间和空间)。考虑到数据保密性，此处，仅利用程序包自带的measlesWeserEms数据集来实现数据可视化和模型拟合。时间序列可视化的部分代码如下：</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(surveillance)
-<span class="kw">data</span>(measlesWeserEms)
-measlesWeserEms15 &lt;-<span class="st"> </span>measlesWeserEms[, <span class="kw">colSums</span>(<span class="kw">observed</span>(measlesWeserEms)) &gt;<span class="st"> </span><span class="dv">6</span>]
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measlesWeserEms15 &lt;-<span class="st"> </span>measlesWeserEms[, <span class="kw">colSums</span>(<span class="kw">observed</span>(measlesWeserEms)) &gt;<span class="st"> </span><span class="dv">6</span>]
 <span class="kw">plot</span>(measlesWeserEms15, <span class="dt">type =</span>observed ~<span class="st"> </span>time |<span class="st"> </span>unit, <span class="dt">legend.opts =</span> <span class="ot">NULL</span>)</code></pre></div>
-<p><img src="Book_files/figure-html/vsiaulization-1.png" width="528" style="display: block; margin: auto;" /> 你可以调节type参数的值，如“observed ~ time”或“observed ~ unit”等来达到不同的可视化效果，需要注意的是其采用的是spplot和lattice绘图系统，若想调节图形相关参数的可查阅程序包的帮助文档。当然，也可以用ggplot2和gridExtra程序包，分别实现数据可视化和图形组合(推荐之至)。</p>
+<p><img src="Book_files/figure-html/vsiaulization-1.png" width="1650" style="display: block; margin: auto;" /> 你可以调节type参数的值，如“observed ~ time”或“observed ~ unit”等来达到不同的可视化效果，需要注意的是其采用的是spplot和lattice绘图系统，若想调节图形相关参数的可查阅程序包的帮助文档。当然，也可以用ggplot2和gridExtra程序包，分别实现数据可视化和图形组合(推荐之至)。</p>
 </div>
 <div id="section-4.3.3" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> 模型拟合</h3>
 <p>此处先拟合基础模型，其包括三成分，其中各研究单元的人口比例值作为offset结合地域面积来反映人口密度，局部特性成分控制季节效应，时间流行成分和空间流行成分(一阶邻近)都只包括截距项。为控制研究区域疫情的过度离散特性，采用负二项分布(NegBin1)进行拟合，当然也可以选择p泊松分布(Possion)。相关代码如下：</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">measlesModel_basic &lt;-<span class="st"> </span><span class="kw">list</span>( 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(surveillance)
+measlesModel_basic &lt;-<span class="st"> </span><span class="kw">list</span>( 
 <span class="dt">end =</span> <span class="kw">list</span>(<span class="dt">f =</span> <span class="kw">addSeason2formula</span>(~<span class="dv">1</span> +<span class="st"> </span>t, <span class="dt">period =</span> measlesWeserEms@freq),<span class="dt">offset =</span> <span class="kw">population</span>(measlesWeserEms)), 
 <span class="dt">ar =</span> <span class="kw">list</span>(<span class="dt">f =</span> ~<span class="dv">1</span>),<span class="dt">ne =</span> <span class="kw">list</span>(<span class="dt">f =</span> ~<span class="dv">1</span>, <span class="dt">weights =</span> <span class="kw">neighbourhood</span>(measlesWeserEms) ==<span class="st"> </span><span class="dv">1</span>), <span class="dt">family =</span> <span class="st">&quot;NegBin1&quot;</span>)
 measlesFit_basic &lt;-<span class="st"> </span><span class="kw">hhh4</span>(<span class="dt">stsObj =</span> measlesWeserEms, <span class="dt">control =</span> measlesModel_basic)
@@ -252,7 +254,7 @@ measlesFit_basic &lt;-<span class="st"> </span><span class="kw">hhh4</span>(<spa
 <p>summary函数中idx2Exp是一个简单系数转换参数，此处是将系数中的ar.1，ne.1，end.1和end.t转换成其对数值，至于为什么要转换，看看基础模型的公式即可知。Epidemic dominant eigenvalue表示疾病发病率中空间流行成分百分值，更进一步的可视化形式如下:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">districts2plot &lt;-<span class="st"> </span><span class="kw">names</span>(<span class="kw">which</span>(<span class="kw">colSums</span>(<span class="kw">observed</span>(measlesWeserEms)) &gt;<span class="st"> </span><span class="dv">20</span>))
 <span class="kw">plot</span>(measlesFit_basic, <span class="dt">type =</span> <span class="st">&quot;fitted&quot;</span>, <span class="dt">units =</span> districts2plot, <span class="dt">hide0s =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<p><img src="Book_files/figure-html/vsisp-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="Book_files/figure-html/vsisp-1.png" width="2049" style="display: block; margin: auto;" /></p>
 <p>对于上图的解读可以从如下方面进行：三种颜色条纹分别代表局部特性成分、时间自相关成分和空间流行成分(需注意的是，此图中作者将Epidemic理解成spatiotemporal，似乎也是有一定道理)。总体而言，这六个研究单元的麻疹疫情主要是受先前麻疹疫情的影响，麻疹疫情出现后，没及时发现并及时进行相应处理。区域单元03453在2002年上半年疫情受邻近区域的影响较大。</p>
 </div>
 <div id="section-4.3.4" class="section level3">
@@ -351,13 +353,13 @@ measlesFit_powerlaw &lt;-<span class="st"> </span><span class="kw">update</span>
 <span class="kw">print</span>(<span class="kw">plot</span>(measlesFit_ri, <span class="dt">type =</span> <span class="st">&quot;ri&quot;</span>, <span class="dt">component =</span> comp, <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="fl">6.6</span>,<span class="fl">8.8</span>),
  <span class="dt">labels =</span> <span class="kw">list</span>(<span class="dt">cex =</span> <span class="fl">0.6</span>), <span class="dt">at =</span> <span class="kw">seq</span>(-<span class="fl">1.7</span>, <span class="fl">1.7</span>, <span class="dt">length.out =</span> <span class="dv">15</span>)))
 }</code></pre></div>
-<p><img src="Book_files/figure-html/randomeffect-1.png" width="672" /><img src="Book_files/figure-html/randomeffect-2.png" width="672" /><img src="Book_files/figure-html/randomeffect-3.png" width="672" /></p>
+<p><img src="Book_files/figure-html/randomeffect-1.png" width="2049" style="display: block; margin: auto;" /><img src="Book_files/figure-html/randomeffect-2.png" width="2049" style="display: block; margin: auto;" /><img src="Book_files/figure-html/randomeffect-3.png" width="2049" style="display: block; margin: auto;" /></p>
 <p>通过这三图分别代表局部特性成分、时间自相关成分和空间流行成分的随机效应，可知03460和03457区域的局部特性成分较大，03454和03457区域的时间自相关成分较大，0.453和03452的空间流行成分较大，故相应措施应运而生：针对03460和03457区域，需加强本地麻疹免疫屏障建设来降低麻疹的本地风险；针对03454和03457区域，则需加强麻疹疫情的应急处置工作，及时控制疫情发展；针对0.453和03452区域则需控制其周边区域麻疹疫情对目标区域的影响。</p>
 </div>
 </div>
 <div id="section-4.4" class="section level2">
 <h2><span class="header-section-number">4.4</span> 结语</h2>
-<p>本文比较粗糙地介绍了时空多成分模型在R中的实现步骤及相关注意事项，当然，你还可以对模型进行扩展。接下来打算基于<a href="https://www.rstudio.com/products/shiny/">shiny</a>来开发时空多成分模型的app，也是作为大疫情数据分析平台的一部分。若有什么问题，请及时联系<a href="zhangbing4502431@outlook.com">张兵:Spatial-R</a>，谢谢！</p>
+<p>本文比较粗糙地介绍了时空多成分模型在R中的实现步骤及相关注意事项，当然，你还可以对模型进行扩展。接下来打算基于<a href="https://www.rstudio.com/products/shiny/">shiny</a>来开发时空多成分模型的app，也是作为大疫情数据分析平台的一部分。</p>
 
 </div>
 </div>

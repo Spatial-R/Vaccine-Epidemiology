@@ -25,7 +25,7 @@
 
 <meta name="author" content="Bing Zhang">
 
-<meta name="date" content="2016-05-22">
+<meta name="date" content="2016-05-29">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -109,10 +109,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Vaccine Epidemiology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background</a></li>
 <li class="chapter" data-level="2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html"><i class="fa fa-check"></i><b>2</b> Bayesian Infectious Dynamics Model in Discrete Time</a><ul>
 <li class="chapter" data-level="2.1" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
 <li class="chapter" data-level="2.2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#model-and-parameters"><i class="fa fa-check"></i><b>2.2</b> Model and Parameters</a></li>
+<li class="chapter" data-level="2.3" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a></li>
+<li class="chapter" data-level="2.4" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#examples-and-codes"><i class="fa fa-check"></i><b>2.4</b> Examples and Codes</a></li>
+<li class="chapter" data-level="2.5" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#conclusion"><i class="fa fa-check"></i><b>2.5</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html"><i class="fa fa-check"></i><b>3</b> Reproduction numbers during epidemics</a><ul>
 <li class="chapter" data-level="3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#basic-reproduction-number"><i class="fa fa-check"></i><b>3.1</b> Basic reproduction number</a></li>
@@ -144,7 +147,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.3.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-strategies"><i class="fa fa-check"></i><b>5.3.2</b> Vaccine Strategies</a></li>
 <li class="chapter" data-level="5.3.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#measure-indicators"><i class="fa fa-check"></i><b>5.3.3</b> Measure Indicators</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion-1"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html"><i class="fa fa-check"></i><b>6</b> Incomplete vaccination with an imperfect vaccine</a><ul>
 <li class="chapter" data-level="6.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
@@ -182,7 +185,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">Chapter 2</span> Bayesian Infectious Dynamics Model in Discrete Time</h1>
 <div id="introduction" class="section level2">
 <h2><span class="header-section-number">2.1</span> Introduction</h2>
-<p>Compartmental models usually written using the ordinary differential equations, which is applied in the continuous times deterministic model. Models formulated using the differential equations are based on the assumption that all the individuals are equally likely to contact any other individuals in that population. However, the situation at the most onset of epidemics is usually quite different, since most of the individuals in the population are susceptible and the number of infected is small. In addition, stochastic model based on a probability of disease contagion provide a more natural description of the transmission of infectious diseases, especially on those occasions where the data have been recorded over predetermined discrete time intervals.In spite of this, we also give serveral continuous times deterministic models, which can be found in my <a href="https://github.com/Spatial-R/Dynamic-Model-for-Infectious-Disease">github</a>.</p>
+<p>Modeling the infectious disease dynamics can be done at individual level as well as population level, moreover, both provide an accurate description of the spread (progress) of infectious diseases in the coresponding situation. Individual-level model allows for the heterogeneity in a population via the individual covariates(Some packages:). While, when the analysis dataset is aggregated at the regular interval and information regarding individual movement and contact behavior is not available, model on population level is more suitable.<br />
+ Compartmental models are usually written using the ordinary differential equations and divide the population into serveral distinct compartments(categories) according to disease status, which is widely applied in the continuous times deterministic model previously <span class="citation">(Cai et al. <a href="#ref-Cai_2013">2013</a>)</span>. Majority of them are based on the assumption that all the individuals are equally likely to contact any other individuals in that population. Actually, when the size of compartments is large enough, the assumption of homogeneous mixing is indeed reasonal(appropriate). However, the situation at the most onset of epidemics is usually quite different, since most of the individuals in the population are susceptible and the number of infected is small. In addition, stochastic(<strong>demographical and environmental stochasticity</strong>) model based on a probability of disease contagion provide a more natural description of the transmission of infectious diseases, especially on those occasions where the data have been recorded over predetermined discrete time intervals<span class="citation">(Allen <a href="#ref-Allen_2014">2014</a>)</span> <span class="citation">(Corber\a’an-Vallet and Santonja <a href="#ref-Corber_n_Vallet_2014">2014</a>)</span>. Consequently, we introduce two stochastic compartmental model in discrete time <span class="citation">(Finkenstädt and Grenfell <a href="#ref-Finkenst_dt_2000">2000</a>)</span> from the publised literatures as well as the analysis codes, aiming to provide a deeper insight into the underlying processes driving historical population dynamics. In spite of this, we also give serveral continuous times deterministic models and all of them can be found in <a href="https://github.com/Spatial-R/Dynamic-Model-for-Infectious-Disease">Github</a>.</p>
 </div>
 <div id="model-and-parameters" class="section level2">
 <h2><span class="header-section-number">2.2</span> Model and Parameters</h2>
@@ -190,7 +194,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
  \begin{aligned}
   y_{t} \sim Bi(i_{t},\rho)
  \end{aligned}
- \]</span> where <span class="math inline">\(i_{t}\)</span> is the number of new infectious at time <span class="math inline">\(t\)</span> and <span class="math inline">\(\rho\)</span> is the probability of being hospitalized for the infectious disease. The number of newly infected individuals at time <span class="math inline">\(t\)</span> can be modeled as <span class="math display">\[
+ \]</span> where <span class="math inline">\(i_{t}\)</span> is the number of new infectious at time <span class="math inline">\(t\)</span> and <span class="math inline">\(\rho\)</span> is the probability of being hospitalized for the infectious disease, which also illustrates the correcting factor for geographical discrepancy. The number of newly infected individuals at time <span class="math inline">\(t\)</span> can be modeled as <span class="math display">\[
 \begin{aligned}
  i_{t} \sim Bi(S_{t-1},P_{t})
 \end{aligned}
@@ -236,7 +240,119 @@ r_{t}=r_{0}+\sum\limits_{k=1}^{K}(r_{2k-1}*sin(\frac{2k*\pi*t}{freq})+r_{2k}*cos
 \]</span></p></li>
 <li><p><strong>Alternative 4</strong>: Deterministical model with a constant transimmision rate. This model is similar to the previous one with <span class="math inline">\(\lambda_{t}=\lambda\)</span>. The number of the hospitalizations at time <span class="math inline">\(t\)</span> is <span class="math inline">\(y_{t}=S_{t-1}*y_{t-1}*\lambda\)</span>.</p></li>
 </ul>
+<p>All the analysis codes can be found in the author’s website. Therefore, just try it!</p>
+</div>
+<div id="packages" class="section level2">
+<h2><span class="header-section-number">2.3</span> Packages</h2>
+<p>Here, i will introduce another R package to fit the TSIR model for infectious disease. You can install the <strong>tsiR</strong> package via devtools from the author’s <a href="https://github.com/adbecker/tsiR">Github</a>. The method used in the package comes from the paper: <strong>Predictability in a highly stochastic system: final size of measles epidemics in small populations </strong>. Basic formula of analysis dataset consists five clolumns including <strong>time</strong>, <strong>cases</strong>,<strong>births</strong>, <strong>pop</strong> and <strong>IP</strong>(infectious period) can be created using the <strong>tsiRdata</strong> function. Other functions can be seen in the fellow part:</p>
+<table style="width:107%;">
+<colgroup>
+<col width="15%" />
+<col width="91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>estpars</code></td>
+<td align="left">Using simple regression: reconstructs susceptibles and estimates parameters</td>
+</tr>
+<tr class="even">
+<td align="left"><code>maxthreshold</code></td>
+<td align="left">Using simple regression: optimizes the threshold parameter for sparse data</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>mcmcestpars</code></td>
+<td align="left">Using MCMC: reconstructions susceptibles and estimates parameters</td>
+</tr>
+<tr class="even">
+<td align="left"><code>mcmctsir</code></td>
+<td align="left">Using MCMC: reconstructions susceptibles, estimates parameters, and runs the simulation</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>plotcases</code></td>
+<td align="left">Plots just the cases data</td>
+</tr>
+<tr class="even">
+<td align="left"><code>plotcomp</code></td>
+<td align="left">Plots the data versus the simulations</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>plotdata</code></td>
+<td align="left">Plots the (interpolated) cases, births, and population time series</td>
+</tr>
+<tr class="even">
+<td align="left"><code>plotres</code></td>
+<td align="left">Plots the fitted regressions, reporting, susceptible reconstruction, estimated parameters, and the fit diagonstics</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>runtsir</code></td>
+<td align="left">Using simple regression: reconstructions suceptibles, estimates parameters, and runs the simulation</td>
+</tr>
+<tr class="even">
+<td align="left"><code>simulatetsir</code></td>
+<td align="left">Runs the simulation taking in the output from <code>estpars</code> or <code>mcmcestpars</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>tsiRdata</code></td>
+<td align="left">Interpolates cases, births, and pop vectors to the generation time of the disease</td>
+</tr>
+<tr class="even">
+<td align="left"><code>twentymeas</code></td>
+<td align="left">Complete biweekly (IP=2) data sets from twenty UK cities</td>
+</tr>
+</tbody>
+</table>
+<p>Something need to be keep in mind is that the reconstruction for susceptible population in TSIR model is crutial. As the TSIR model assumes that all individuals will eventually become infected, the incidence must therefore track the number of births:<br />
+<span class="math display">\[  
+\begin{aligned}
+   S_{t}=\overline{S}+Z_{t} 
+\end{aligned}
+\]</span> <span class="math display">\[  
+\begin{aligned}
+   Z_{t+1}=\sum\limits_{i=1}^{t}(B_{i-d})-\sum\limits_{i=1}^{t}(\rho_{i}*C_{i})+\sum\limits_{i=1}^{t}(\mu_{i})+Z_{0}
+\end{aligned}
+\]</span> Assuming <span class="math inline">\(\mu_{t}\)</span> is small, then <span class="math inline">\(\\rho_{t}\)</span> can be estimated using local regression between the cummulative observed cases and the cummulative births with the <span class="math inline">\(Z_{t}\)</span> as the residuals of the regreesion. How to use the function can be obtained form the code <strong>?function_name</strong>. Serveral arguments should be treated cautiously, including <strong>IP</strong>(infectious period in weeks),<strong>alpha</strong>(maxing parameter, set 0.97), <strong>sbar</strong>(mean number of susceptibles, can be estimated from dataset), <strong>seasonality</strong>( can be one of “standard”, “schoolterm” or “none”), <strong>regtype</strong>(regression used in susceptible reconstruction. Options are “gaussian”“,”lm“(linear model),”spline“(smooth.spline with 2.5 degrees freedom),”lowess“(with f = 2/3, iter = 1),”loess“(degree 1), and”user&quot; which is just a user inputed vector), <strong>epidemics</strong>(whether to split the data up, two options: cont and break), <strong>threshold</strong>(cut off for a new epidemic if epidemics = “break”, can be fit by maximizing Rsquared predictions using the <em>maxthreshold</em> function, details can found <span class="citation">(Caudron et al. <a href="#ref-Caudron_2014">2014</a>)</span>).</p>
+</div>
+<div id="examples-and-codes" class="section level2">
+<h2><span class="header-section-number">2.4</span> Examples and Codes</h2>
+<p>Actually, we can use the <strong>estpars</strong> and <strong>mcmcestpars</strong> function to get the estimate parameters, *maxthreshold<strong> function for the thresthod parameter, </strong>mcmctsir<strong> and </strong>mcmctsir** to run the simulations on MCMC and simple regression respectively. Here, we use the dataset in tsiR package to carry out a simple analysis and corresponding codes are:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tsiR);<span class="kw">require</span>(kernlab)
+<span class="kw">require</span>(ggplot2);<span class="kw">require</span>(reshape2);<span class="kw">require</span>(grid)</code></pre></div>
+<pre><code>## Loading required package: grid</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">MoldMeas &lt;-<span class="st"> </span>twentymeas[[<span class="st">&quot;Mold&quot;</span>]]
+parms &lt;-<span class="st"> </span><span class="kw">estpars</span>(<span class="dt">data=</span>MoldMeas,<span class="dt">alpha=</span><span class="fl">0.97</span>,<span class="dt">IP=</span><span class="dv">2</span>)
+tau &lt;-<span class="st"> </span><span class="kw">maxthreshold</span>(<span class="dt">data=</span>MoldMeas,<span class="dt">parms=</span>parms,<span class="dt">IP=</span><span class="dv">2</span>)
+MoldRes &lt;-<span class="st"> </span><span class="kw">simulatetsir</span>(<span class="dt">data=</span>MoldMeas,<span class="dt">parms=</span>parms,<span class="dt">epidemics=</span><span class="st">&quot;break&quot;</span>,<span class="dt">threshold=</span>tau,<span class="dt">nsim=</span><span class="dv">10</span>,<span class="dt">method=</span><span class="st">&quot;negbin&quot;</span>)
+<span class="kw">plotres</span>(MoldRes)</code></pre></div>
+<p><img src="Book_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="conclusion" class="section level2">
+<h2><span class="header-section-number">2.5</span> Conclusion</h2>
+<p>Utimately, TSIR model with stochastical effect from environment and demographics provides a knowledge on the dynamics of infectious diseases, while possible improvements include the use of statistical models such as trajectory matching or hidden Markov models to infer a biweekly incidence rate rather than using a linear interpolant is essential. Fortunately, Prof. Aaron A. King has established a <a href="http://kingaa.github.io/pomp/">pomp</a> package, which provides a very general realization of nonliner partially-observed Markov processes model. I will give a short introduction about the analysis on Mumps dynamics using <strong>pomp</strong> package in the next chapter.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Cai_2013">
+<p>Cai, Yongli, Xixi Wang, Weiming Wang, and Min Zhao. 2013. “Stochastic Dynamics of an SIRS Epidemic Model with Ratio-Dependent Incidence Rate.” <em>Abstract and Applied Analysis</em> 2013. Hindawi Publishing Corporation: 1–11. doi:<a href="https://doi.org/10.1155/2013/172631">10.1155/2013/172631</a>.</p>
+</div>
+<div id="ref-Allen_2014">
+<p>Allen, Edward J. 2014. “Derivation and Computation of Discrete-Delay and Continuous-Delay SDEs in Mathematical Biology.” <em>MBE</em> 11 (3). American Institute of Mathematical Sciences (AIMS): 403–25. doi:<a href="https://doi.org/10.3934/mbe.2014.11.403">10.3934/mbe.2014.11.403</a>.</p>
+</div>
+<div id="ref-Corber_n_Vallet_2014">
+<p>Corber\a’an-Vallet, Ana, and Francisco J. Santonja. 2014. “A Bayesian SIRS Model for the Analysis of Respiratory Syncytial Virus in the Region of Valencia, Spain.” <em>Biom. J.</em> 56 (5). Wiley-Blackwell: 808–18. doi:<a href="https://doi.org/10.1002/bimj.201300194">10.1002/bimj.201300194</a>.</p>
+</div>
+<div id="ref-Finkenst_dt_2000">
+<p>Finkenstädt, B. F., and B. T. Grenfell. 2000. “Time Series Modelling of Childhood Diseases: A Dynamical Systems Approach.” <em>J. R. Stat. Soc. Ser. C</em> 49 (2). Wiley-Blackwell: 187–205. doi:<a href="https://doi.org/10.1111/1467-9876.00187">10.1111/1467-9876.00187</a>.</p>
+</div>
+<div id="ref-Caudron_2014">
+<p>Caudron, Q., A. S. Mahmud, C. J. E. Metcalf, M. Gottfrethsson, C. Viboud, A. D. Cliff, and B. T. Grenfell. 2014. “Predictability in a Highly Stochastic System: Final Size of Measles Epidemics in Small Populations.” <em>Journal of The Royal Society Interface</em> 12 (102). The Royal Society: 20141125–5. doi:<a href="https://doi.org/10.1098/rsif.2014.1125">10.1098/rsif.2014.1125</a>.</p>
 </div>
 </div>
             </section>

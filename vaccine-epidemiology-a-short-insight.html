@@ -25,7 +25,7 @@
 
 <meta name="author" content="Bing Zhang">
 
-<meta name="date" content="2016-05-22">
+<meta name="date" content="2016-05-29">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -109,10 +109,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Vaccine Epidemiology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background</a></li>
 <li class="chapter" data-level="2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html"><i class="fa fa-check"></i><b>2</b> Bayesian Infectious Dynamics Model in Discrete Time</a><ul>
 <li class="chapter" data-level="2.1" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
 <li class="chapter" data-level="2.2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#model-and-parameters"><i class="fa fa-check"></i><b>2.2</b> Model and Parameters</a></li>
+<li class="chapter" data-level="2.3" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a></li>
+<li class="chapter" data-level="2.4" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#examples-and-codes"><i class="fa fa-check"></i><b>2.4</b> Examples and Codes</a></li>
+<li class="chapter" data-level="2.5" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#conclusion"><i class="fa fa-check"></i><b>2.5</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html"><i class="fa fa-check"></i><b>3</b> Reproduction numbers during epidemics</a><ul>
 <li class="chapter" data-level="3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#basic-reproduction-number"><i class="fa fa-check"></i><b>3.1</b> Basic reproduction number</a></li>
@@ -144,7 +147,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.3.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-strategies"><i class="fa fa-check"></i><b>5.3.2</b> Vaccine Strategies</a></li>
 <li class="chapter" data-level="5.3.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#measure-indicators"><i class="fa fa-check"></i><b>5.3.3</b> Measure Indicators</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion-1"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html"><i class="fa fa-check"></i><b>6</b> Incomplete vaccination with an imperfect vaccine</a><ul>
 <li class="chapter" data-level="6.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
@@ -183,7 +186,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>What is right to be done cannot be done too soon!</p>
 <div id="background" class="section level2">
 <h2><span class="header-section-number">5.1</span> Background</h2>
-<p>This is a short insight into the vaccine epidemiology after working in the department of immunization program of Zhejiang provincial center for disease control and protection for nearly two years. The reason to write this blog is to sum up the knowledge on the vaccination research program and extract some useful ideas or clues to do the further investigations into the vaccine epidemiology. Here, I have just simply defined the vaccine epidemiology as all the epidemiology issues related to both the vaccine and infectious diseases. Fox instance, decision makers may have great interests to investigate how the efficiency of certain vaccine on infectious disease or test whether there is a cross-protection for other types of vires in the clinic trials or not. Compared to the traditional epidemiology, vaccine epidemiology has focused more on the vaccine than the disease. As my primary interest is about the resparitory disease, many analysis methods talk about in the following sections may not be sutable for the vector-borne or other types of infectious diseases. If you have any questions, just feel free to contact me(Email: <a href="mailto:zhangbing4502431@outlook.com">zhangbing4502431@outlook.com</a>).</p>
+<p>This is a short insight into the vaccine epidemiology after working in the department of immunization program of Zhejiang provincial center for disease control and protection for nearly two years. The reason to write this blog is to sum up the knowledge on the vaccination research program and extract some useful ideas or clues to do the further investigations into the vaccine epidemiology. Here, I have just simply defined the vaccine epidemiology as all the epidemiology issues related to both the vaccine and infectious diseases. Fox instance, decision makers may have great interests to investigate how the efficiency of certain vaccine on infectious disease or test whether there is a cross-protection for other types of vires in the clinic trials or not. Compared to the traditional epidemiology, vaccine epidemiology has focused more on the vaccine than the disease. As my primary interest is about the resparitory disease, many analysis methods talk about in the following sections may not be sutable for the vector-borne or other types of infectious diseases.</p>
 </div>
 <div id="introduction-1" class="section level2">
 <h2><span class="header-section-number">5.2</span> Introduction</h2>
@@ -211,7 +214,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The indicators in special situation contain basic reproduction number(RO) and Mininum relative single does efficacy. Reprouction number, is the number of secondary cases generated by a single individual over its entire infectious period in a complete susceptile population , which is commonly used to characterize pathogen transmissibility during a epidemic. The monitoring of R over time provides the feedback on the effectiveness of interventions <span class="citation">(Griffin <a href="#ref-Griffin_2015">2015</a>)</span>. Mininum relative single does efficacy was firstly used to figure out, under what conditions the use of single-dose compaigns are expected to be as or more effictive than the two-dose compaigns with the same amount of vaccine <span class="citation">(Andrew S. Azman et al. <a href="#ref-Azman_2015">2015</a>)</span>.</p>
 </div>
 </div>
-<div id="conclusion" class="section level2">
+<div id="conclusion-1" class="section level2">
 <h2><span class="header-section-number">5.4</span> Conclusion</h2>
 <p>This is a short insight into vaccine epdemiology on the population level. Other issues like the adverse effects following immunization and vaccine clinic trials are not discussed in this blog. However, if you have any ideas on the AEFI or not things, just contact with me. Here, i will point out serveral analysis direction on vaccine epidemiology and hope that more people will contribute themself to the vaccine analysis. 1. The impact or ecconomic health analysis of the vaccine intervention on infectious disease. 2. Nonvccine-related factors such as meterological factors or air pollutant on infectious disease. 3. The spatial or temporal distribution on infectious disease and the outbreak detection.</p>
 

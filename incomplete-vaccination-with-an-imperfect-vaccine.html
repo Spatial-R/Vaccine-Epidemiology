@@ -25,7 +25,7 @@
 
 <meta name="author" content="Bing Zhang">
 
-<meta name="date" content="2016-05-22">
+<meta name="date" content="2016-05-29">
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -109,10 +109,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">Vaccine Epidemiology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background</a></li>
 <li class="chapter" data-level="2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html"><i class="fa fa-check"></i><b>2</b> Bayesian Infectious Dynamics Model in Discrete Time</a><ul>
 <li class="chapter" data-level="2.1" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
 <li class="chapter" data-level="2.2" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#model-and-parameters"><i class="fa fa-check"></i><b>2.2</b> Model and Parameters</a></li>
+<li class="chapter" data-level="2.3" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#packages"><i class="fa fa-check"></i><b>2.3</b> Packages</a></li>
+<li class="chapter" data-level="2.4" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#examples-and-codes"><i class="fa fa-check"></i><b>2.4</b> Examples and Codes</a></li>
+<li class="chapter" data-level="2.5" data-path="bayesian-infectious-dynamics-model-in-discrete-time.html"><a href="bayesian-infectious-dynamics-model-in-discrete-time.html#conclusion"><i class="fa fa-check"></i><b>2.5</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html"><i class="fa fa-check"></i><b>3</b> Reproduction numbers during epidemics</a><ul>
 <li class="chapter" data-level="3.1" data-path="reproduction-numbers-during-epidemics.html"><a href="reproduction-numbers-during-epidemics.html#basic-reproduction-number"><i class="fa fa-check"></i><b>3.1</b> Basic reproduction number</a></li>
@@ -144,7 +147,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.3.2" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#vaccine-strategies"><i class="fa fa-check"></i><b>5.3.2</b> Vaccine Strategies</a></li>
 <li class="chapter" data-level="5.3.3" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#measure-indicators"><i class="fa fa-check"></i><b>5.3.3</b> Measure Indicators</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
+<li class="chapter" data-level="5.4" data-path="vaccine-epidemiology-a-short-insight.html"><a href="vaccine-epidemiology-a-short-insight.html#conclusion-1"><i class="fa fa-check"></i><b>5.4</b> Conclusion</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html"><i class="fa fa-check"></i><b>6</b> Incomplete vaccination with an imperfect vaccine</a><ul>
 <li class="chapter" data-level="6.1" data-path="incomplete-vaccination-with-an-imperfect-vaccine.html"><a href="incomplete-vaccination-with-an-imperfect-vaccine.html#background-1"><i class="fa fa-check"></i><b>6.1</b> Background</a></li>
@@ -251,6 +254,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <div id="refs" class="references">
 <div>
+<p>Allen, Edward J. 2014. “Derivation and Computation of Discrete-Delay and Continuous-Delay SDEs in Mathematical Biology.” <em>MBE</em> 11 (3). American Institute of Mathematical Sciences (AIMS): 403–25. doi:<a href="https://doi.org/10.3934/mbe.2014.11.403">10.3934/mbe.2014.11.403</a>.</p>
+</div>
+<div>
 <p>Azman, A. S., and J. Lessler. 2014. “Reactive Vaccination in the Presence of Disease Hotspots.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 282 (1798). The Royal Society: 20141341–1. doi:<a href="https://doi.org/10.1098/rspb.2014.1341">10.1098/rspb.2014.1341</a>.</p>
 </div>
 <div>
@@ -260,10 +266,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Boettiger, C., and A. Hastings. 2013. “No Early Warning Signals for Stochastic Transitions: Insights from Large Deviation Theory.” <em>Proceedings of the Royal Society B: Biological Sciences</em> 280 (1766). The Royal Society: 20131372–2. doi:<a href="https://doi.org/10.1098/rspb.2013.1372">10.1098/rspb.2013.1372</a>.</p>
 </div>
 <div>
+<p>Cai, Yongli, Xixi Wang, Weiming Wang, and Min Zhao. 2013. “Stochastic Dynamics of an SIRS Epidemic Model with Ratio-Dependent Incidence Rate.” <em>Abstract and Applied Analysis</em> 2013. Hindawi Publishing Corporation: 1–11. doi:<a href="https://doi.org/10.1155/2013/172631">10.1155/2013/172631</a>.</p>
+</div>
+<div>
+<p>Caudron, Q., A. S. Mahmud, C. J. E. Metcalf, M. Gottfrethsson, C. Viboud, A. D. Cliff, and B. T. Grenfell. 2014. “Predictability in a Highly Stochastic System: Final Size of Measles Epidemics in Small Populations.” <em>Journal of The Royal Society Interface</em> 12 (102). The Royal Society: 20141125–5. doi:<a href="https://doi.org/10.1098/rsif.2014.1125">10.1098/rsif.2014.1125</a>.</p>
+</div>
+<div>
+<p>Corber\a’an-Vallet, Ana, and Francisco J. Santonja. 2014. “A Bayesian SIRS Model for the Analysis of Respiratory Syncytial Virus in the Region of Valencia, Spain.” <em>Biom. J.</em> 56 (5). Wiley-Blackwell: 808–18. doi:<a href="https://doi.org/10.1002/bimj.201300194">10.1002/bimj.201300194</a>.</p>
+</div>
+<div>
 <p>Cowling, Benjamin J., Dennis K. M. Ip, Vicky J. Fang, Piyarat Suntarattiwong, Sonja J. Olsen, Jens Levy, Timothy M. Uyeki, et al. 2013. “Aerosol Transmission Is an Important Mode of Influenza A Virus Spread.” <em>Nature Communications</em> 4 (June). Nature Publishing Group. doi:<a href="https://doi.org/10.1038/ncomms2922">10.1038/ncomms2922</a>.</p>
 </div>
 <div>
 <p>“Epidemiology - Wikipedia, the Free Encyclopedia.” 2016. <em>Wikipedia</em>. <a href="https://en.wikipedia.org/wiki/Epidemiology" class="uri">https://en.wikipedia.org/wiki/Epidemiology</a>. <a href="https://en.wikipedia.org/wiki/Epidemiology" class="uri">https://en.wikipedia.org/wiki/Epidemiology</a>.</p>
+</div>
+<div>
+<p>Finkenstädt, B. F., and B. T. Grenfell. 2000. “Time Series Modelling of Childhood Diseases: A Dynamical Systems Approach.” <em>J. R. Stat. Soc. Ser. C</em> 49 (2). Wiley-Blackwell: 187–205. doi:<a href="https://doi.org/10.1111/1467-9876.00187">10.1111/1467-9876.00187</a>.</p>
 </div>
 <div>
 <p>Griffin, Jamie T. 2015. “The Interaction Between Seasonality and Pulsed Interventions Against Malaria in Their Effects on the Reproduction Number.” Edited by Katia Koelle. <em>PLOS Computational Biology</em> 11 (1). Public Library of Science (PLoS): e1004057. doi:<a href="https://doi.org/10.1371/journal.pcbi.1004057">10.1371/journal.pcbi.1004057</a>.</p>
