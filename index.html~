@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Background</h1>
-<p>This book includes some reading notes from the published books or papers, analysis method using real datasets and short insight on the vaccine epidemiology. You can download all the <em>Rmd</em> files in my <a href="https://github.com/Spatial-R">Github</a>. If you have any questions, just feel free to contact me (Email:<a href="zhangbing4502431@outlook.com" class="uri">zhangbing4502431@outlook.com</a>).</p>
+<p>This books includes some reading notes from the published books or papers, analysis method using real datasets and short insight on the vaccine epidemiology. You can download all the <em>Rmd</em> files in my <a href="https://github.com/Spatial-R">Github</a>. If you have any questions, just feel free to contact me (Email:<a href="zhangbing4502431@outlook.com" class="uri">zhangbing4502431@outlook.com</a>).</p>
 
 </div>
             </section>
